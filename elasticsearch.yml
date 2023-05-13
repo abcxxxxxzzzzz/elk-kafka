@@ -1,0 +1,27 @@
+# 名称，网络, 在集群上，除了各自名称 name 不一样，其他配置都是一样
+cluster.name: "docker-cluster"
+network.host: 0.0.0.0
+
+discovery.seed_hosts: ["es:9300"]
+cluster.initial_master_nodes: ["es:9300"]
+
+# 数据，日志
+path.data: /usr/share/elasticsearch/data
+path.logs: /usr/share/elasticsearch/log
+
+# 跨域
+http.cors.enabled: true
+http.cors.allow-origin: "*"
+
+# 开启权限认证后, es-head-master 访问 es 需要的配置
+http.cors.allow-headers: Authorization, X-Requested-With,Content-Length,Content-Type
+
+
+# 开启权限认证
+xpack.security.enabled: true
+
+# 传输通信
+xpack.security.transport.ssl.enabled: true
+xpack.security.transport.ssl.verification_mode: certificate
+xpack.security.transport.ssl.keystore.path: /usr/share/elasticsearch/config/elastic-certificates.p12
+xpack.security.transport.ssl.truststore.path: /usr/share/elasticsearch/config/elastic-certificates.p12

@@ -1,0 +1,5 @@
+i18n.locale: "zh-CN"
+server.name: kibana
+server.host: "0"
+elasticsearch.hosts: [ "http://es:9200" ]
+monitoring.ui.container.elasticsearch.enabled: true
